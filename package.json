@@ -1,0 +1,44 @@
+{
+  "name": "meta-mate",
+  "version": "1.0.0",
+  "description": "Your true game-obsessed buddy",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "mate": "node ./src/server/mate/mate.js",
+    "scrap": "node ./src/server/scrap/index.js",
+    "dev": "nodemon src/server/main.js -w src/server",
+    "start": "cross-env NODE_ENV=production node src/server/main.js",
+    "build": "vite build"
+  },
+  "devDependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "nodemon": "^3.0.1",
+    "vite": "^5.4.10"
+  },
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "express": "^4.18.2",
+    "puppeteer": "^23.8.0",
+    "vite-express": "*",
+    "vite-full-js": "https://github.com/Leyinko/vite-full-js"
+  },
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "keywords": [
+    "NPM",
+    "fullstack",
+    "frontend",
+    "backend",
+    "vite-express",
+    "vite",
+    "express",
+    "js",
+    "vanilla"
+  ],
+  "author": "Luca Giro",
+  "license": "ISC"
+}

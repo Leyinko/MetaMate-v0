@@ -1,0 +1,92 @@
+#home {
+  padding-bottom: 20svh;
+}
+
+.logo {
+  margin-bottom: 40px;
+  cursor: pointer;
+  height: 6em;
+  transition: filter 300ms;
+  filter: invert(1);
+  transition: all 0.3s ease-in-out;
+}
+
+.logo:hover {
+  filter: invert(1) drop-shadow(0 0 1rem var(--secondary-color));
+  transition: filter 300ms;
+}
+
+.search {
+  position: relative;
+}
+
+#home input {
+  width: 325px;
+  background-color: var(--background-select);
+}
+
+#home img[role='button'] {
+  display: none;
+  position: absolute;
+  top: 0px;
+  right: -60px;
+  width: 46px;
+  border-radius: 8px;
+  padding: 12px;
+  cursor: pointer;
+  filter: invert(1);
+  opacity: 0.5;
+  animation: appear 1s ease-in-out forwards;
+}
+
+#home img[role='button']:hover {
+  opacity: 1;
+}
+
+#home img[role='button'].locked {
+  display: block;
+}
+
+#suggestions-box {
+  margin-top: 28px;
+  width: 325px;
+  height: 150px;
+  position: absolute;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+#suggestions-box .loading-logo {
+  width: 30px;
+  height: 30px;
+  top: 25%;
+  opacity: 0.5;
+  transition: all 0.4s ease-in-out;
+}
+
+#suggestions-box li {
+  opacity: 0.3;
+  visibility: hidden;
+  width: inherit;
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 200;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+  animation: falling 1s forwards ease-in-out;
+}
+
+#suggestions-box li:hover {
+  opacity: 1;
+  scale: 1.3;
+  transition: all 0.4s ease-in-out;
+}
+
+#suggestions-box li.locked {
+  scale: 1.3;
+  text-decoration: underline;
+  opacity: 1;
+}
