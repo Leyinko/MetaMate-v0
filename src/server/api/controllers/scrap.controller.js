@@ -50,7 +50,7 @@ export const scrapIt = (req, res, next) => {
 export const abortIt = async (req, res, next) => {
   try {
     if (scrapingProcess) {
-      scrapingProcess.send('terminate');
+      scrapingProcess.kill();
       scrapingProcess = null;
       return res.status(200).json('Operation stopped');
     } else {

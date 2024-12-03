@@ -26,7 +26,7 @@ export const mateThinking = async () => {
   // Loading...
   let start = startThinking();
   const cancel = $('#abort-controller');
-  cancel.addEventListener('click', () => interruptMate);
+  cancel.addEventListener('click', () => interruptMate());
 
   // Logs
   const reflectionBox = $('#mate-logs');
@@ -66,7 +66,7 @@ export const mateThinking = async () => {
   function stopThinking(...intervals) {
     const end = hideLoading();
     intervals.forEach((interval) => clearInterval(interval));
-    $$('.navigation-bar a').forEach((anchor) => anchor.classList.remove('scrapping')), reflectionBox.classList.add('show'), loading.remove();
+    $$('.navigation-bar a').forEach((anchor) => anchor.classList.remove('scrapping')), reflectionBox.classList.remove('show'), loading.remove();
     return ((end - start) / 1000).toFixed(2);
   }
 };

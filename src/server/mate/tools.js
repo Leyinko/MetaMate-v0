@@ -67,7 +67,7 @@ const archives = {
   },
   GGDEALS: {
     lock: '+best+price+gg.deals.com',
-    pad: 'a[href*="https://gg.deals/game"]',
+    pad: 'a[href*="https://gg.deals/"]',
     fragments: {
       deal_img: `document.querySelector('.col-right')`,
     },
@@ -88,7 +88,7 @@ const admission = async (page) => {
 
 const jump = async (page, web) => {
   try {
-    const access = await page.waitForSelector(archives[web].pad, { timeout: 3000 });
+    const access = await page.waitForSelector(archives[web].pad, { timeout: 5000 });
     await access.click();
 
     await new Promise((resolve) => setTimeout(resolve, 500));
