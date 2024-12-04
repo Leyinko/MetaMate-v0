@@ -22,7 +22,7 @@ MetaMate is a web scraping application designed to retrieve detailed information
 
 ## 2. Features
 
-- Integrated Frontend and Backend using my [Vite Full JS](https://github.com/Leyinko/vite-full-js) folder structure.
+- Integrated Frontend and Backend using my recent [Vite Full JS](https://github.com/Leyinko/vite-full-js) full-stack Application.
 - Independent NODE Process for Scraping operation using Puppeteer.
 - Global search and lock feature with Rawg.io API.
 - Custom MetaDotLog feature for logs processes sharing from Backend to Frontend.
