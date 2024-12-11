@@ -1,13 +1,14 @@
-import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer-core';
+import Chromium from '@sparticuz/chromium';
 
 let browser;
 
 try {
   browser = await puppeteer.launch({
-    headless: false,
+    args: Chromium.args,
     defaultViewport: null,
-    args: ['--disable-web-security', '--disable-features=IsolateOrigins,site-per-process', '--no-sandbox', '--disable-setuid-sandbox', '--start-maximized'],
-    ignoreHTTPSErrors: true,
+    executablePath: await Chromium.executablePath(),
+    headless: Chromium.headless,
   });
 
   let page = await browser.newPage();
