@@ -8,7 +8,7 @@ async function askMate(game) {
 
   try {
     brainstorm = await puppeteer.launch({
-      headless: false,
+      headless: true,
       defaultViewport: null,
       args: ['--disable-web-security', '--disable-features=IsolateOrigins,site-per-process', '--no-sandbox', '--disable-setuid-sandbox', '--start-maximized'],
       ignoreHTTPSErrors: true,
