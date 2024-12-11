@@ -1,6 +1,6 @@
 import { writeMetaAnswer } from '../utils/writeFile.js';
 import { mateBrain } from './brain.js';
-import puppeteer from 'puppeteer';
+import puppeteer from 'puppeteer-core';
 import Chromium from '@sparticuz/chromium';
 
 // Mate Main Task
@@ -19,7 +19,6 @@ async function askMate(game) {
       args: Chromium.args,
       defaultViewport: null,
       executablePath: await Chromium.executablePath(),
-      headless: Chromium.headless,
     });
 
     const mateAnswer = await mateBrain.thinking(brainstorm, game);
