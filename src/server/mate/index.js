@@ -1,6 +1,6 @@
 import { writeMetaAnswer } from '../utils/writeFile.js';
 import { mateBrain } from './brain.js';
-import puppeteer from 'puppeteer-core';
+import puppeteer from 'puppeteer';
 import Chromium from '@sparticuz/chromium';
 
 // Mate Main Task
