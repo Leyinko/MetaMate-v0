@@ -12,7 +12,7 @@ export async function writeMetaAnswer(data) {
     const dir = path.dirname(filePath);
     await fs.mkdir(dir, { recursive: true });
 
-    const jsonString = JSON.stringify(data);
+    const jsonString = JSON.stringify(data, null, 2);
     await fs.writeFile(filePath, jsonString);
   } catch (error) {
     console.error('Error saving Mate answer into .json...', error);
