@@ -1,24 +1,17 @@
 import { writeMetaAnswer } from '../utils/writeFile.js';
 import { mateBrain } from './brain.js';
-import puppeteer from 'puppeteer-core';
-import Chromium from '@sparticuz/chromium';
+import puppeteer from 'puppeteer';
 
 // Mate Main Task
 async function askMate(game) {
   let brainstorm;
 
   try {
-    // brainstorm = await puppeteer.launch({
-    //   headless: false,
-    //   defaultViewport: null,
-    //   args: ['--disable-web-security', '--disable-features=IsolateOrigins,site-per-process', '--no-sandbox', '--disable-setuid-sandbox', '--start-maximized'],
-    //   ignoreHTTPSErrors: true,
-    // });
-
     brainstorm = await puppeteer.launch({
-      args: Chromium.args,
+      headless: false,
       defaultViewport: null,
-      executablePath: await Chromium.executablePath(),
+      args: ['--disable-web-security', '--disable-features=IsolateOrigins,site-per-process', '--no-sandbox', '--disable-setuid-sandbox', '--start-maximized'],
+      ignoreHTTPSErrors: true,
     });
 
     const mateAnswer = await mateBrain.thinking(brainstorm, game);
