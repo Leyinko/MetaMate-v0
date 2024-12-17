@@ -5,8 +5,8 @@ const password = /(?<=')[^']+(?=')/g;
 
 const archives = {
   METACRITIC: {
-    lock: '+metacritic.com/game',
-    pad: 'a[href*="www.metacritic.com/game"]',
+    lock: '+metacritic.com',
+    pad: 'a[href*="www.metacritic.com/game/"]',
     fragments: {
       title: `document.querySelector('[data-testid="hero-title"] > h1').textContent`,
       platforms: `Array.from(
@@ -27,7 +27,7 @@ const archives = {
     },
   },
   IGN: {
-    lock: '+ign.com/games',
+    lock: '+ign.com',
     pad: 'a[href*="//www.ign.com/games"]',
     fragments: {
       image: `document.querySelector('figure img').src`,
@@ -89,7 +89,7 @@ const admission = async (page) => {
 const jump = async (page, web) => {
   try {
     const access = await page.waitForSelector(archives[web].pad, { timeout: 5000 });
-    await access.click();
+    if (access) await access.click();
 
     await new Promise((resolve) => setTimeout(resolve, 500));
 
